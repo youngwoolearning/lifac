@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from lifac import views
+from board import views
+from main import views
 
 urlpatterns = [
+    path('', include('main.urls')),
+    path('board/', include('board.urls')),
     path('admin/', admin.site.urls),
-    path('lifac/', include('lifac.urls')),
 ]
